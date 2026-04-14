@@ -1,0 +1,1 @@
+call D:\MCP2601\AgentWork\.venv\Scripts\activate.bat
