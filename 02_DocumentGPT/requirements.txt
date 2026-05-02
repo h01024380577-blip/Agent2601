@@ -1,0 +1,14 @@
+streamlit
+python-dotenv
+langchain
+langchain-core
+langchain-openai
+langchain-community
+langchain-classic
+langchain-text-splitters
+faiss-cpu
+tiktoken
+unstructured
+unstructured[pdf]
+docx2txt
+pypdf
