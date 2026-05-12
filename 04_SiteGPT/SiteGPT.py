@@ -140,6 +140,8 @@ def load_website(url):
     )
 
 
+
+
     loader = SitemapLoader(
         url,
         # filter_urls=[
@@ -157,10 +159,27 @@ def load_website(url):
         # 크롤링한 페이지에 대해 전처리를 할수 있는 함수를 제공해줄수 있다. (BeautifulSoup 사용)
         parsing_function=parse_page,
     )
-    loader.max_depth = 1  # 기본값 10
+    loader.max_depth = 3  # 기본값 10
     loader.headers = {'User-Agent': 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Mobile Safari/537.36'}
     docs = loader.load_and_split(text_splitter=splitter)
-    vector_store = FAISS.from_documents(documents=docs, embedding=OpenAIEmbeddings())
+
+# Embedding 모델의 입력 초과.
+# BadRequestError: Error code: 400 - {'error': {'message': 'Requested 602902 tokens, max
+# 300000 tokens per request', 'type': 'max_tokens_per_request', 'param': None, 'code':
+# 'max_tokens_per_request'}}
+
+    batch_size = 100  # 적절한 크기로 설정
+    substores = []
+    for i in range(0, len(docs), batch_size):
+        chunk = docs[i: i + batch_size]   # batch_size 만큼씩 embedding 할거다
+        vector_store = FAISS.from_documents(documents=chunk, embedding=OpenAIEmbeddings())
+        substores.append(vector_store)
+
+    # 여러 store 병합
+    vector_store = substores[0]
+    for store in substores[1:]:
+        vector_store.merge_from(store)  # 병합
+
     return vector_store.as_retriever()  
 
 # ────────────────────────────────────────
