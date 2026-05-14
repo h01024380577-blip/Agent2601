@@ -33,7 +33,26 @@ llm = ChatOpenAI(
     temperature=0.1,
 )
 
+splitter = RecursiveCharacterTextSplitter.from_tiktoken_encoder(
+    chunk_size=800,
+    chunk_overlap=100,
+)
 
+# podcast.txt 를 embed 해야 한다.
+@st.cache_resource(show_spinner="Embedding file...")
+def embed_file(file_path):
+    cache_dir = LocalFileStore(os.path.join(embedding_dir))  
+
+    loader = TextLoader(file_path)
+    docs = loader.load_and_split(text_splitter=splitter)
+
+    embeddings = OpenAIEmbeddings()
+    cached_embeddings = CacheBackedEmbeddings.from_bytes_store(embeddings, cache_dir)
+
+    vectorstore = FAISS.from_documents(docs, cached_embeddings)
+
+    retriever = vectorstore.as_retriever()
+    return retriever
 
 # ────────────────────────────────────────
 # 🍇 file load & cache
@@ -44,6 +63,12 @@ file_dir = os.path.dirname(os.path.realpath(__file__)) # *.py 파일의 '경로'
 upload_dir = os.path.join(file_dir, '.cache/chunks')
 if not os.path.exists(upload_dir):
     os.makedirs(upload_dir)
+
+embedding_dir = os.path.join(file_dir, r'./.cache/embeddings')
+if not os.path.exists(embedding_dir):
+    os.makedirs(embedding_dir)    
+
+
 
 # 🐶수업용 킬스위치: transcript 한번 했으면 중복해서 실행하지 말기
 has_transcript = os.path.exists(os.path.join(file_dir, r'.cache/podcast.txt'))
@@ -141,3 +166,84 @@ if video:
         status.update(label="Transcripting Audio...")
         transcript_path = video_path.replace("mp4", 'txt')
         transcribe_chunks(chunks_folder, transcript_path)
+
+    # 3개의 tab
+    transcript_tab, summary_tab, qa_tab = st.tabs(["Transcript", "Summary", "Q&A"])
+
+    with transcript_tab:
+        with open(transcript_path, "r") as file:
+            st.write(file.read())    
+
+
+    with summary_tab:
+        start = st.button("Generate summary")
+
+        # ↓ 2개의 chain 을 시작
+        #  첫번째 chain : 첫번째 document 를 요약 (summarize)
+        #  두번째 chain : 다른 모든 document 를 요약
+        #      LLM 에게 '이전의 summary' 와 새 context 를 사용하여 새로운 summary 를 만들게 함 (refine!).
+        if start:
+            loader = TextLoader(transcript_path)
+
+            docs = loader.load_and_split(text_splitter=splitter)
+
+            # 첫번째 chain
+            first_summary_prompt = ChatPromptTemplate.from_template("""
+                Write a concise summary of the following:
+                "{text}"
+                CONCISE SUMMARY:
+            """)
+
+            first_summary_chain = first_summary_prompt | llm | StrOutputParser()
+
+            summary = first_summary_chain.invoke({
+                "text": docs[0].page_content,   # 첫번째 Document
+            })
+
+            # 두번째 chain: 나머지 Document 들을 요약할 chain
+            refine_prompt = ChatPromptTemplate.from_template(
+                """
+                Your job is to produce a final summary.
+                We have provided an existing summary up to a certain point: {existing_summary}
+                We have the opportunity to refine the existing summary (only if needed) with some more context below.
+                ------------
+                {context}
+                ------------
+                Please refine the existing summary using the additional context, if necessary.
+                If the additional context does not require any changes to the existing summary, **return the existing summary exactly as it is.**
+                Do NOT explain your decision. Just output the final summary.
+                """
+            )
+
+            refine_chain = refine_prompt | llm | StrOutputParser()
+
+            # 나머지 Document 들 에 대해... 체인호출 (시간 걸림)
+            with st.status("Summarizing...") as status:
+                for i, doc in enumerate(docs[1:]):
+                    status.update(label=f"Processing document {i+1}/{len(docs) - 1}")
+                    summary = refine_chain.invoke({
+                        "existing_summary": summary,  # 이전 summary 와
+                        "context": doc.page_content,  # 다음 Document 를 사용
+                    })
+
+                    st.write("🔷 ", summary)  # 확인용  : 중간단계 요약 누적
+
+            st.write("✅ ", summary) # 최종 요약.
+
+
+    with qa_tab:
+        retriever = embed_file(transcript_path)
+        docs = retriever.invoke("Do they talk about marcus aurelius?")            
+        st.write(docs) # 확인
+
+
+
+
+
+
+
+
+
+
+
+
