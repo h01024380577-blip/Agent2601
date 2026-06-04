@@ -53,7 +53,7 @@ class NewsSummarizerAgent:
             return {**news_item, "ai_summary": content}
         
     
-    async def summarize_new(self, state: NewsState) -> NewsState:   
+    async def summarize_news(self, state: NewsState) -> NewsState:   
         """모든 뉴스를 비동기로 요약"""
         # workflow 의 node 로 사용할거다 
 
