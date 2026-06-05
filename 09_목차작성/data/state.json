@@ -2,55 +2,108 @@
     "messages": [
         [
             "SystemMessage",
-            "\n            너희 AI들은 사용자의 요구에 맞는 책을 쓰는 작가팀이다.\n            사용자가 사용하는 언어로 대화하라.\n\n            현재시각은 2026-06-04 21:55:08이다.\n\n            "
+            "\n            너희 AI들은 사용자의 요구에 맞는 책을 쓰는 작가팀이다.\n            사용자가 사용하는 언어로 대화하라.\n\n            현재시각은 2026-06-05 21:44:40이다.\n\n            "
         ],
         [
             "HumanMessage",
-            "안녕?"
+            "HYBE 와 JYP 비교하는 책을 쓰자.  우선 벡터검색부터 하자."
         ],
         [
             "AIMessage",
-            "[Supervisor] agent='communicator' done=False description='현재 사용자의 요구사항이 명확하지 않으며, 목차가 작성되지 않았습니다. 사용자에게 현재 프로젝트의 진행 상황을 보고하고, 추가적인 요구사항이나 구체적인 책의 방향에 대해 문의합니다.' done_at='N/A'"
+            "[Supervisor] agent='vector_search_agent' done=False description='벡터 DB 검색을 통해 HYBE와 JYP에 관련된 정보를 수집하여 목차 작성을 준비해야 합니다.' done_at=''"
+        ],
+        [
+            "AIMessage",
+            "[VECTOR SEARCH AGENT] 다음 질문에 대한 검색 완료: ['HYBE 회사 정보', 'JYP 회사 정보', 'HYBE와 JYP 비교', 'K-pop 엔터테인먼트 산업에서의 HYBE의 역할', 'K-pop 엔터테인먼트 산업에서의 JYP의 역할']"
         ],
         [
             "AIMessageChunk",
-            "안녕하세요! AI팀의 커뮤니케이터입니다. 현재 저희가 작업하고 있는 프로젝트의 구체적인 목차는 아직 작성되지 않았습니다. 사용자의 요구사항이 더욱 명확해지기를 기다리고 있습니다. 책의 주제나 방향에 대해 좀 더 구체적인 아이디어가 있으면 알려주세요. 귀하의 의견과 피드백은 저희에게 큰 도움이 됩니다. 어떻게 진행하면 좋을까요?"
-        ],
-        [
-            "HumanMessage",
-            "HYBE 와 JYP 의 경영전략과 기업 문화에 대한 책을 써줘"
-        ],
-        [
-            "AIMessage",
-            "[Supervisor] agent='content_strategist' done=False description='사용자가 HYBE와 JYP의 경영전략과 기업 문화에 대한 책을 원하며 요구사항이 명확해짐. AI 팀의 콘텐츠 전략을 결정하고, 전체 책의 목차를 작성해야 합니다.' done_at='N/A'"
-        ],
-        [
-            "AIMessage",
-            "[Content Strategist] 목차 작성 완료:"
-        ],
-        [
-            "AIMessageChunk",
-            "안녕하세요! 저희 AI팀은 현재 HYBE와 JYP의 경영전략과 기업 문화에 대한 책을 집필 중입니다. 사용자가 원하셨던 책의 목적에 맞춰 세부 목차를 구성했습니다. 전체적인 방향은 양사의 경영전략과 기업 문화를 심층적으로 탐구하는 데 중점을 두고 있습니다. \n\n혹시 추가적인 의견이나 수정사항이 있으시면 언제든지 말씀해 주세요. 귀하의 피드백은 저희 작업에 큰 도움이 됩니다. 추가로 궁금한 점이나 바라시는 점이 있으시면 편하게 이야기해 주세요!"
+            "현재 벡터 검색 단계가 완료되었습니다. 우리는 HYBE와 JYP에 관련된 정보를 수집하여 목차 작성을 위한 준비를 마쳤습니다. 다음 단계로 넘어가기 위해 사용자의 의견이나 추가적인 요구사항이 있다면 자유롭게 말씀해 주세요. 어떤 내용이나 특정 주제를 더 포함하고 싶으신가요?"
         ]
     ],
     "task_history": [
         {
-            "agent": "communicator",
+            "agent": "vector_search_agent",
             "done": true,
-            "description": "현재 사용자의 요구사항이 명확하지 않으며, 목차가 작성되지 않았습니다. 사용자에게 현재 프로젝트의 진행 상황을 보고하고, 추가적인 요구사항이나 구체적인 책의 방향에 대해 문의합니다.",
-            "done_at": "2026-06-04 21:55:17"
-        },
-        {
-            "agent": "content_strategist",
-            "done": true,
-            "description": "사용자가 HYBE와 JYP의 경영전략과 기업 문화에 대한 책을 원하며 요구사항이 명확해짐. AI 팀의 콘텐츠 전략을 결정하고, 전체 책의 목차를 작성해야 합니다.",
-            "done_at": "2026-06-04 21:55:38"
+            "description": "벡터 DB 검색을 통해 HYBE와 JYP에 관련된 정보를 수집하여 목차 작성을 준비해야 합니다.",
+            "done_at": "2026-06-05 21:44:54"
         },
         {
             "agent": "communicator",
             "done": true,
             "description": "AI팀의 진행상황을 사용자에게 보고하고, 사용자의 의견을 파악하기 위한 대화를 나눈다",
-            "done_at": "2026-06-04 21:55:41"
+            "done_at": "2026-06-05 21:44:56"
         }
-    ]
+    ],
+    "references": {
+        "queries": [
+            "HYBE 회사 정보",
+            "JYP 회사 정보",
+            "HYBE와 JYP 비교",
+            "K-pop 엔터테인먼트 산업에서의 HYBE의 역할",
+            "K-pop 엔터테인먼트 산업에서의 JYP의 역할"
+        ],
+        "docs": [
+            {
+                "title": "Your idols' style by agency - The Korea Herald",
+                "source": "https://www.koreaherald.com/article/10010990"
+            },
+            {
+                "source": "https://www.youtube.com/watch?v=x6SreGFRHj8",
+                "title": "Comparing #hybe #sm #jyp #yg Groups Concepts & Management"
+            },
+            {
+                "title": "HYBE, SM, JYP, and YG Are Not the Same - YouTube",
+                "source": "https://www.youtube.com/watch?v=SRkMrDLZ7Ws"
+            },
+            {
+                "source": "https://www.koreaherald.com/article/10010990",
+                "title": "Your idols' style by agency - The Korea Herald"
+            },
+            {
+                "title": "Your idols' style by agency - The Korea Herald",
+                "source": "https://www.koreaherald.com/article/10010990"
+            },
+            {
+                "title": "Which entertainment is better to audition in, HYBE or JYPE? - Quora",
+                "source": "https://www.quora.com/Which-entertainment-is-better-to-audition-in-HYBE-or-JYPE"
+            },
+            {
+                "title": "SM과 YG, JYP와 하이브는 어떻게 다를까 - 톱클래스",
+                "source": "http://topclass.chosun.com/news/articleView.html?idxno=35924"
+            },
+            {
+                "source": "https://www.youtube.com/watch?v=x6SreGFRHj8",
+                "title": "Comparing #hybe #sm #jyp #yg Groups Concepts & Management"
+            },
+            {
+                "title": "Your idols' style by agency - The Korea Herald",
+                "source": "https://www.koreaherald.com/article/10010990"
+            },
+            {
+                "source": "https://www.koreaherald.com/article/10010990",
+                "title": "Your idols' style by agency - The Korea Herald"
+            },
+            {
+                "title": "HYBE, SM, JYP, and YG Are Not the Same - YouTube",
+                "source": "https://www.youtube.com/watch?v=SRkMrDLZ7Ws"
+            },
+            {
+                "source": "https://www.youtube.com/watch?v=SRkMrDLZ7Ws",
+                "title": "HYBE, SM, JYP, and YG Are Not the Same - YouTube"
+            },
+            {
+                "source": "https://www.koreaherald.com/article/10010990",
+                "title": "Your idols' style by agency - The Korea Herald"
+            },
+            {
+                "source": "https://www.koreaherald.com/article/10010990",
+                "title": "Your idols' style by agency - The Korea Herald"
+            },
+            {
+                "title": "Your idols' style by agency - The Korea Herald",
+                "source": "https://www.koreaherald.com/article/10010990"
+            }
+        ]
+    }
 }
