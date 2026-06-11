@@ -44,6 +44,8 @@ class State(TypedDict):
     user_request: str  # 사용자의 요구사항을 저장 <- business_analyst가 사용자와 대화한 내용과 현재의 진행상황 (목차, 참고자료..) 를 바탕으로 분석하여 채울거다.
     ai_recommendation: str  # AI 의 조언
 
+    supervisor_call_count: int  # supervisor 호출 횟수 저장 <- 무한루프 방지 목적
+
 
 # 🟦 business_analyst 노드 agent
 def business_analyst(state: State):
@@ -308,12 +310,31 @@ def outline_reviewer(state: State):
 
     # 체인호출. 
     # 목차리뷰가 길어질수 있다. 스트림호출
+    review = outline_reviewer_chain.stream(inputs)
 
+    gathered = None
 
-    # 🟨 To Next ...
+    for chunk in review:
+        print(chunk.content, end='')  # 확인용
 
+        if gathered is None:
+            gathered = chunk  # 첫 chunk Message
+        else:
+            gathered += chunk  # chunk Message 객체는 덧셈 가능
+
+    # 작업후기를 messages 에 추가
+    if '[OUTLINE REVIEW AGENT]' not in gathered.content:
+        gathered.content = f"[OUTLINE REVIEW AGENT] {gathered.content}"
+    print('🟡', gathered.content)  
+    messages.append(gathered)
+
+    # 리뷰 결과는 ai_recommendation 의 값으로도 활용
+    ai_recommendation = gathered.content
 
     print("\n\n💖====== OUTLINE REVIEWER 종료 ======")
+
+    # 상태 업데이트
+    return {"messages": messages, "ai_recommendation": ai_recommendation}
 
 
 # 🟦 웹 검색을 하는 노드 agent: 
@@ -471,6 +492,8 @@ def communicator(state: State):
     return {
         "messages": messages,
         "task_history": task_history,
+        # ↓ communicator 가 사용자 보고 마치면 0으로 리셋하며 다시 supervisor 호출이 2회 초과할때까지 에이전트들끼리 작업할수 있도록 함. 
+        "supervisor_call_count": 0,
     }  # 상태 업데이트
 
 # 🟦 supervisor agent 
@@ -509,8 +532,22 @@ def supervisor(state: State):
         "outline": get_outline(current_path)
     }
 
-    # 체인을 invoke 한 결과는 Task 다!  
-    task = supervisor_chain.invoke(inputs)
+    # supervisor 호출 횟수 확인
+    supervisor_call_count = state.get("supervisor_call_count", 0)
+
+    if supervisor_call_count > 2:
+        print("📣Supervisor 호출 횟수 초과: Communicator 호출")
+        task = Task(
+            agent="communicator",
+            done=False,
+            description="supervisor 호출 횟수 초과했으므로, 현재까지의 진행상황을 사용자에게 보고한다.",
+            done_at = "",
+        )
+
+    else:
+        # 체인을 invoke 한 결과는 Task 다!  
+        task = supervisor_chain.invoke(inputs)
+
     # 이를 state 의 task_history 에 추가.  해야될 일 추가!
     task_history = state.get("task_history", [])
     task_history.append(task)
@@ -525,6 +562,7 @@ def supervisor(state: State):
     return {
         "messages": messages, 
         "task_history": task_history,
+        "supervisor_call_count": supervisor_call_count + 1,
     }
 
 # 위 task 에 따라 라우팅
@@ -623,14 +661,16 @@ def vector_search_agent(state: State):
     tasks[-1].done = True
     tasks[-1].done_at = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
 
-    # 새로운 Task 추가
-    new_task = Task(
-        agent="communicator",
-        done=False,
-        description="AI팀의 진행상황을 사용자에게 보고하고, 사용자의 의견을 파악하기 위한 대화를 나눈다",
-        done_at=""
-    )
-    tasks.append(new_task)    
+    # communicator 로 보내는 Task 삭제, business_analyst 에게 조언할수 있게 수정
+    #  -> ai_recommendation 을 작성하도록 수정
+
+    # new_task = Task(
+    #     agent="communicator",
+    #     done=False,
+    #     description="AI팀의 진행상황을 사용자에게 보고하고, 사용자의 의견을 파악하기 위한 대화를 나눈다",
+    #     done_at=""
+    # )
+    # tasks.append(new_task)    
 
 
     msg_str = f"[VECTOR SEARCH AGENT] 다음 질문에 대한 검색 완료: {queries}"
@@ -638,13 +678,16 @@ def vector_search_agent(state: State):
     print(msg_str)
     messages.append(message)
 
+    ai_recommendation = "현재 참고자료(references)가 목차(outline)를 개선하는데 충분한지 확인하라. 충분하다면 content_strategist로 목차 작성을 하라."
+
     print("\n\n💙====== VECTOR SEARCH AGENT 종료 ======")
 
     # state 업데이트
     return {
         "messages": messages,
         "task_history": tasks,
-        "references": references
+        "references": references,
+        "ai_recommendation": ai_recommendation,
     }
 
 
@@ -653,6 +696,7 @@ graph_builder = StateGraph(State)
 
 # Nodes
 graph_builder.add_node("business_analyst", business_analyst)
+graph_builder.add_node("outline_reviewer", outline_reviewer)
 graph_builder.add_node("supervisor", supervisor)
 graph_builder.add_node("communicator", communicator)
 graph_builder.add_node("content_strategist", content_strategist)
@@ -673,7 +717,8 @@ graph_builder.add_conditional_edges(
     }
 )
 
-graph_builder.add_edge("content_strategist", "business_analyst")
+graph_builder.add_edge("content_strategist", "outline_reviewer")
+graph_builder.add_edge("outline_reviewer", "business_analyst")
 graph_builder.add_edge("web_search_agent", "vector_search_agent")
 graph_builder.add_edge("vector_search_agent", "business_analyst")
 graph_builder.add_edge("communicator", END)

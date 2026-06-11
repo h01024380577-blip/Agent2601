@@ -2,325 +2,256 @@
     "messages": [
         [
             "SystemMessage",
-            "\n            너희 AI들은 사용자의 요구에 맞는 책을 쓰는 작가팀이다.\n            사용자가 사용하는 언어로 대화하라.\n\n            현재시각은 2026-06-09 21:26:32이다.\n\n            "
+            "\n            너희 AI들은 사용자의 요구에 맞는 책을 쓰는 작가팀이다.\n            사용자가 사용하는 언어로 대화하라.\n\n            현재시각은 2026-06-11 19:48:00이다.\n\n            "
         ],
         [
             "HumanMessage",
-            "HYBE 와 JYP 의 경영전략과 기업 문화에 대해 비교하는 내용으로 목차를 써줘"
+            "HYBE 와 JYP 를 비교하는 목차를 써줘. CEO, 경영전략, 기업문화, 특정에 대해 설명해줘"
         ],
         [
             "AIMessage",
-            "[Business Analyst] ```\n- 목표: HYBE와 JYP의 경영전략과 기업 문화를 비교하는 내용을 바탕으로 목차 작성\n  방법: HYBE와 JYP의 각각의 경영전략 및 기업 문화를 조사하고, 두 기업 간의 비교점을 도출하여 이를 목차 형태로 체계적으로 구성\n```\n\n지난 요청사항이 달성되지 않았습니다. 현재 추가적인 연구 및 자료 조사가 필요하며, 이를 바탕으로 목차를 작성해야 합니다."
+            "[Business Analyst] ```\n- 목표: HYBE와 JYP를 비교하는 목차 작성\n 방법: CEO, 경영전략, 기업문화, 기업의 특성에 대해 각각 상세히 설명할 수 있는 목차를 제안\n```"
         ],
         [
             "AIMessage",
-            "[Supervisor] agent='vector_search_agent' done=False description='사용자의 요구에 맞는 목차 작성을 위해 HYBE와 JYP의 경영전략과 기업 문화에 대한 기본적인 정보를 확보하는 것이다. 이를 통해 방향성을 파악하고 초안을 작성하는 데 필요한 자료를 수집한다.' done_at=''"
+            "[Supervisor] agent='web_search_agent' done=False description=\"Since there are gaps in user requirements and no outline is ready, execute a web search to gather and verify relevant information about HYBE and JYP to construct the book's outline effectively.\" done_at=''"
         ],
         [
             "AIMessage",
-            "[VECTOR SEARCH AGENT] 다음 질문에 대한 검색 완료: ['HYBE 경영전략 및 기업 문화', 'JYP 경영전략 및 기업 문화']"
+            "[WEB SEARCH AGENT] 다음 질문에 대한 검색 완료: ['HYBE CEO 2026', 'JYP CEO 2026', 'HYBE 경영전략', 'JYP 경영전략', 'HYBE 기업문화', 'JYP 기업문화', 'HYBE 특징', 'JYP 특징']"
         ],
         [
             "AIMessage",
-            "[Business Analyst] ```\n- 목표: HYBE와 JYP의 경영전략과 기업 문화를 비교하는 내용을 바탕으로 목차 작성\n  방법: HYBE와 JYP의 각각의 경영전략 및 기업 문화를 조사하고, 두 기업 간의 비교점을 도출하며 이를 체계적으로 목차 형태로 구성하기 위해 추가적인 연구 및 자료 조사를 수행\n```"
+            "[VECTOR SEARCH AGENT] 다음 질문에 대한 검색 완료: ['HYBE CEO 2026', 'JYP CEO 2026', 'HYBE 경영전략', 'JYP 경영전략', 'HYBE 기업문화', 'JYP 기업문화', 'HYBE 특징', 'JYP 특징']"
         ],
         [
             "AIMessage",
-            "[Supervisor] agent='content_strategist' done=False description='HYBE와 JYP의 경영전략과 기업 문화에 대한 기초 정보가 확보된 상태에서 콘텐츠 전략을 수립하고, 전체 목차의 초안을 작성한다.' done_at=''"
+            "[Business Analyst] ```\n- 목표: HYBE와 JYP를 비교하는 목차 작성\n 방법: CEO, 경영전략, 기업문화, 기업의 특성에 관해 상세히 설명할 수 있는 목차를 작성\n```\n\n현재 참고자료는 사용자 요구사항에 대한 목차를 작성하기에 충분한 정보가 포함되어 있습니다. 이제 content_strategist를 통해 사용자의 요구를 반영한 목차를 구체적으로 작성할 수 있도록 진행해야 합니다."
         ],
         [
             "AIMessage",
-            "[Content Strategist] 목차 작성 완료: outline 작성 완료\n \n\n+ 목차 작성 후기\n- 사용자의 요구사항인 HYBE와 JYP의 경영전략과 기업 문화 비교가 책의 중심 내용으로 구성되어 요구를 잘 반영했다.\n- 전략 비교와 문화적 비교 측면의 세분화가 잘 이루어졌으며, 실질적인 정보를 바탕으로 내용을 확장할 수 있다.\n- 참고자료의 부족으로 더욱 세부적인 사례 기반 자료를 확보할 필요가 있다; 추가적인 리서치를 통해 실질적인 데이터 확보가 요구된다."
+            "[Supervisor] agent='content_strategist' done=False description='이전에 수행한 웹 및 벡터 검색을 통해 충분한 정보를 수집하였습니다. 이제 수집된 정보를 바탕으로 content_strategist를 사용하여 사용자의 요구에 맞는 HYBE와 JYP 비교에 대한 목차를 작성하십시오.' done_at=''"
         ],
         [
             "AIMessage",
-            "[Business Analyst] ```\n- 목표: HYBE와 JYP의 경영전략과 기업 문화 비교에 기반한 목차 작성 완료\n  방법: HYBE와 JYP의 경영전략 및 기업 문화를 비교하여 체계적으로 구성된 목차를 작성 완료. 추가적인 자료 조사를 통해 실질적인 사례 기반의 자료를 확보하여 내용을 확장할 필요가 있음.\n```"
+            "[Content Strategist] 목차 작성 완료: outline 작성 완료\n \n\n+ 목차 작성 후기\n- 사용자의 요구사항이 적절히 반영되었습니다. 필요한 주요 영역들이 관련 자료를 참고하여 체계적으로 구성되었습니다.\n- 추가로 확장할 수 있는 부분이나 구범을 구체화하기 위한 깊이 있는 사례 연구가 필요한 경우를 파악하고, 구성 개선을 위해 추가 리서치가 필요하다고 판단됩니다."
+        ],
+        [
+            "AIMessageChunk",
+            "[OUTLINE REVIEW AGENT] ### 분석 결과\n\n1. **사용자 요구사항 충족 여부**: \n   - 전체적으로 사용자의 요구사항을 잘 반영한 목차입니다. CEO, 경영전략, 기업문화, 기업의 특성이라는 주요 주제들을 포함하고 있으며, 각 섹션이 상세히 설명되어 있습니다.\n\n2. **논리적 흐름의 적절성**:\n   - 목차의 흐름은 CEO의 분석에서 시작하여 경영 전략, 기업 문화 및 조직 구조, 그리고 기업의 특성으로 이어지는 논리적인 구조를 가집니다. 이는 자연스럽게 기업의 몇몇 핵심 측면을 심층적으로 탐구할 수 있게 해줍니다.\n\n3. **근거에 기반하지 않은 내용 여부**:\n   - 목차 자체에 대해 근거가 부족하거나 잘못된 내용은 발견되지 않았습니다. 각 섹션은 관련된 참고문헌과 함께 언급되었습니다.\n\n4. **참고자료 활용 여부**:\n   - 제시된 여러 참고자료들이 각 섹션에 적절하게 활용되었으며, 각 기업의 특성과 전략에 대해 이해를 돕고 있습니다.\n\n5. **참고자료의 충분성 및 오류 여부**:\n   - 사용자 요구사항을 수행하기에 충분한 참고자료가 제공되었습니다. URL상에 example.com 같은 더미 URL은 보이지 않으며, 모든 참고자료는 실제 문서로 적절해 보입니다.\n\n6. **실제 페이지 URL 대신 대표 URL 삭제 여부**:\n   - 대표 URL로 표시되어 삭제해야 할 경우는 보이지 않습니다. 모든 링크가 명확히 제시된 자료와 연결됩니다.\n\n### 제안 사항\n\n- **제안 사항**: 현재 내용이 사용자의 요구를 만족하고 있으며, 목차가 체계적이면서 충분히 상세합니다. 다만, 추가적으로 깊이 있는 사례 연구나 구범을 구체화하기 위한 추가 리서치가 필요할 수 있습니다. 따라서 추가적인 구체화와 사례 연구를 위해 `vector_search_agent`를 호출하여 관련 사례 연구 자료를 탐색하면 좋을 것 같습니다.\n\n- **다음 단계**: `vector_search_agent`를 통해 구체적인 사례 연구 자료를 확보하여, 각 장의 내용을 더욱 깊이 있게 작성하는 데 도움을 줄 수 있습니다. 이는 목차의 각 섹션에 대한 사례 기반의 설명을 더욱 풍부하게 할 것입니다."
         ],
         [
             "AIMessage",
-            "[Supervisor] agent='web_search_agent' done=False description='참고자료의 부족으로 인해 실질적인 사례 기반 정보를 더 많이 확보해야 합니다. 이를 위해 웹 검색을 통해 추가적인 자료를 수집하여 목차와 콘텐츠의 세부사항을 보강해야 합니다.' done_at=''"
+            "[Business Analyst] ```\n- 목표: HYBE와 JYP에 대한 비교 목차 작성\n  방법: CEO, 경영전략, 기업문화, 기업의 특성에 대해 각각 상세히 설명할 수 있는 목차를 구성하고, 충분한 참고 자료를 바탕으로 각 섹션을 지원합니다. 추가적으로 사례 연구를 위한 추가 자료 탐색이 필요할 수 있으며, 이를 위해 `vector_search_agent`를 활용하여 관련 자료를 확보합니다.\n```"
         ],
         [
             "AIMessage",
-            "[WEB SEARCH AGENT] 다음 질문에 대한 검색 완료: ['HYBE management strategy and corporate culture', 'JYP management strategy and corporate culture', 'HYBE case studies in business strategy', 'JYP case studies in business strategy', 'K-pop industry future trends 2026']"
+            "[Supervisor] agent='vector_search_agent' done=False description=\"최근 작성한 목차의 각 섹션에 대한 사례 연구를 더 깊이 있게 작성하기 위해 관련 사례 연구 자료를 벡터 DB에서 검색하여 구체화된 'HYBE와 JYP' 비교 목차를 보강합니다.\" done_at=''"
         ],
         [
             "AIMessage",
-            "[VECTOR SEARCH AGENT] 다음 질문에 대한 검색 완료: ['HYBE 경영전략 및 기업 문화', 'JYP 경영전략 및 기업 문화', 'HYBE management strategy and corporate culture', 'JYP management strategy and corporate culture', 'HYBE case studies in business strategy', 'JYP case studies in business strategy', 'K-pop industry future trends 2026']"
+            "[VECTOR SEARCH AGENT] 다음 질문에 대한 검색 완료: ['HYBE CEO 2026', 'JYP CEO 2026', 'HYBE 경영전략', 'JYP 경영전략', 'HYBE 기업문화', 'JYP 기업문화', 'HYBE 특징', 'JYP 특징', 'HYBE 사례 연구', 'JYP 사례 연구']"
         ],
         [
             "AIMessage",
-            "[Business Analyst] ```\n- 목표: HYBE와 JYP의 경영전략과 기업 문화를 비교하는 내용으로 목차 작성\n  방법: HYBE와 JYP의 각각의 경영전략 및 기업 문화를 조사하고, 두 기업 간의 비교점을 도출하여 이를 목차 형태로 체계적으로 구성 완료. 추가적인 자료 조사를 통해 실질적인 사례 기반의 자료를 확보하고 내용을 확장할 필요가 있음.\n```"
-        ],
-        [
-            "AIMessage",
-            "[Supervisor] agent='web_search_agent' done=False description='실질적인 사례 기반의 자료를 보강하기 위해 웹 검색을 통해 HYBE와 JYP의 경영전략, 기업 문화, 성공 사례에 대한 정보를 추가적으로 수집한다.' done_at=''"
-        ],
-        [
-            "AIMessage",
-            "[WEB SEARCH AGENT] 다음 질문에 대한 검색 완료: ['HYBE success case studies and business strategies', 'JYP success case studies and business strategies']"
-        ],
-        [
-            "AIMessage",
-            "[VECTOR SEARCH AGENT] 다음 질문에 대한 검색 완료: ['HYBE 경영전략 및 기업 문화', 'JYP 경영전략 및 기업 문화', 'HYBE management strategy and corporate culture', 'JYP management strategy and corporate culture', 'HYBE case studies in business strategy', 'JYP case studies in business strategy', 'K-pop industry future trends 2026', 'HYBE success case studies and business strategies', 'JYP success case studies and business strategies']"
-        ],
-        [
-            "AIMessage",
-            "[Business Analyst] ```\n- 목표: HYBE와 JYP의 경영전략과 기업 문화를 비교하는 내용으로 목차 작성\n  방법: HYBE와 JYP의 각각의 경영전략 및 기업 문화를 조사하고, 두 기업 간의 비교점을 도출하여 이를 목차 형태로 체계적으로 구성 완료. 추가적인 자료 조사를 통해 실질적인 사례 기반의 자료를 확보하고 내용을 확장할 필요가 있음.\n```"
-        ],
-        [
-            "AIMessage",
-            "[Supervisor] agent='content_strategist' done=False description='기본 목차와 콘텐츠 프레임을 마련한 이후, 세부적인 사례와 실질적 데이터를 문서에 확장시켜 담기 위해 콘텐츠 전략을 재조정하고, 최종 목차를 확일하면서 내용 보강 작업을 준비한다.' done_at=''"
-        ],
-        [
-            "AIMessage",
-            "[Content Strategist] 목차 작성 완료: outline 작성 완료\n \n\n+ 목차 작성 후기\n- 사용자의 요구사항이 적절히 반영되었으며, HYBE와 JYP의 경영전략 및 기업 문화 비교를 통해 다양한 측면에서 깊이 있는 분석을 제시한다.\n- 경영 및 문화적 비교 측면에 대한 적절한 세분화로 내용을 확장할 수 있는 기틀을 마련하였다.\n- 추가 자료 조사가 필요하며, 웹 검색과 데이터 확보를 통해 더욱 풍부한 내용을 구성할 것을 권장한다."
-        ],
-        [
-            "AIMessage",
-            "[Business Analyst] ``` \n- 목표: HYBE와 JYP의 경영전략과 기업 문화를 비교하는 내용으로 목차 최종 구성 완료 \n  방법: HYBE와 JYP의 경영전략 및 기업 문화를 심도 있게 비교하고 분석한 목차를 체계적으로 구성 완료. 추가적인 자료 조사를 통해 세부적인 사례 기반의 자료를 확보하여 내용을 확장할 필요가 있으며, 이를 통해 더욱 풍부하고 구체적인 콘텐츠를 작성해야 함.\n```"
-        ],
-        [
-            "AIMessage",
-            "[Supervisor] agent='vector_search_agent' done=False description='Using the results from the recent a web search, consolidate and integrate the specific case studies and successes of HYBE and JYP. This will help improve the comprehensiveness of the book.' done_at=''"
-        ],
-        [
-            "AIMessage",
-            "[VECTOR SEARCH AGENT] 다음 질문에 대한 검색 완료: ['HYBE 경영전략 및 기업 문화', 'JYP 경영전략 및 기업 문화', 'HYBE management strategy and corporate culture', 'JYP management strategy and corporate culture', 'HYBE case studies in business strategy', 'JYP case studies in business strategy', 'K-pop industry future trends 2026', 'HYBE success case studies and business strategies', 'JYP success case studies and business strategies', 'HYBE and JYP success case studies in business strategy', 'HYBE and JYP recent case studies in management strategies']"
-        ],
-        [
-            "AIMessage",
-            "[Business Analyst] ```\n- 목표: HYBE와 JYP의 경영전략과 기업 문화에 대한 목차 최종 작성 \n  방법: HYBE와 JYP의 경영전략 및 기업 문화를 심도 있게 비교하고 분석한 목차를 체계적으로 구성 완료. 사용자 요청에 따라 관련 콘텐츠를 더욱 풍부하고 구체적으로 작성하기 위해 추가적인 자료 조사를 지속해야 함.\n```"
+            "[Business Analyst] ```\n- 목표: HYBE와 JYP를 비교하는 목차 작성\n 방법: CEO, 경영전략, 기업문화, 기업의 특성에 대해 각각 상세히 설명할 수 있는 목차를 구성하고, 충분한 참고 자료를 바탕으로 각 섹션을 지원합니다. 추가적으로 사례 연구를 위한 추가 자료 탐색이 필요할 수 있으며, 이를 위해 벡터 검색 에이전트(`vector_search_agent`)를 활용하여 관련 자료를 확보합니다.\n```"
         ]
     ],
     "task_history": [
         {
-            "agent": "vector_search_agent",
+            "agent": "web_search_agent",
             "done": true,
-            "description": "사용자의 요구에 맞는 목차 작성을 위해 HYBE와 JYP의 경영전략과 기업 문화에 대한 기본적인 정보를 확보하는 것이다. 이를 통해 방향성을 파악하고 초안을 작성하는 데 필요한 자료를 수집한다.",
-            "done_at": "2026-06-09 21:27:24"
+            "description": "Since there are gaps in user requirements and no outline is ready, execute a web search to gather and verify relevant information about HYBE and JYP to construct the book's outline effectively.",
+            "done_at": "2026-06-11 19:49:04"
         },
         {
-            "agent": "communicator",
-            "done": false,
-            "description": "AI팀의 진행상황을 사용자에게 보고하고, 사용자의 의견을 파악하기 위한 대화를 나눈다",
-            "done_at": ""
+            "agent": "vector_search_agent",
+            "done": true,
+            "description": "AI팀이 쓸 책의 세부 목차를 결정하기 위한 정보를 벡터 검색을 통해 찾아낸다. 다음 항목이 새로 추가되었다\n: ['HYBE CEO 2026', 'JYP CEO 2026', 'HYBE 경영전략', 'JYP 경영전략', 'HYBE 기업문화', 'JYP 기업문화', 'HYBE 특징', 'JYP 특징']",
+            "done_at": "2026-06-11 19:49:11"
         },
         {
             "agent": "content_strategist",
             "done": true,
-            "description": "HYBE와 JYP의 경영전략과 기업 문화에 대한 기초 정보가 확보된 상태에서 콘텐츠 전략을 수립하고, 전체 목차의 초안을 작성한다.",
-            "done_at": "2026-06-09 21:27:40"
-        },
-        {
-            "agent": "web_search_agent",
-            "done": true,
-            "description": "참고자료의 부족으로 인해 실질적인 사례 기반 정보를 더 많이 확보해야 합니다. 이를 위해 웹 검색을 통해 추가적인 자료를 수집하여 목차와 콘텐츠의 세부사항을 보강해야 합니다.",
-            "done_at": "2026-06-09 21:28:13"
+            "description": "이전에 수행한 웹 및 벡터 검색을 통해 충분한 정보를 수집하였습니다. 이제 수집된 정보를 바탕으로 content_strategist를 사용하여 사용자의 요구에 맞는 HYBE와 JYP 비교에 대한 목차를 작성하십시오.",
+            "done_at": "2026-06-11 19:49:37"
         },
         {
             "agent": "vector_search_agent",
             "done": true,
-            "description": "AI팀이 쓸 책의 세부 목차를 결정하기 위한 정보를 벡터 검색을 통해 찾아낸다. 다음 항목이 새로 추가되었다\n: ['HYBE management strategy and corporate culture', 'JYP management strategy and corporate culture', 'HYBE case studies in business strategy', 'JYP case studies in business strategy', 'K-pop industry future trends 2026']",
-            "done_at": "2026-06-09 21:28:16"
-        },
-        {
-            "agent": "communicator",
-            "done": false,
-            "description": "AI팀의 진행상황을 사용자에게 보고하고, 사용자의 의견을 파악하기 위한 대화를 나눈다",
-            "done_at": ""
-        },
-        {
-            "agent": "web_search_agent",
-            "done": true,
-            "description": "실질적인 사례 기반의 자료를 보강하기 위해 웹 검색을 통해 HYBE와 JYP의 경영전략, 기업 문화, 성공 사례에 대한 정보를 추가적으로 수집한다.",
-            "done_at": "2026-06-09 21:28:33"
-        },
-        {
-            "agent": "vector_search_agent",
-            "done": true,
-            "description": "AI팀이 쓸 책의 세부 목차를 결정하기 위한 정보를 벡터 검색을 통해 찾아낸다. 다음 항목이 새로 추가되었다\n: ['HYBE success case studies and business strategies', 'JYP success case studies and business strategies']",
-            "done_at": "2026-06-09 21:28:35"
-        },
-        {
-            "agent": "communicator",
-            "done": false,
-            "description": "AI팀의 진행상황을 사용자에게 보고하고, 사용자의 의견을 파악하기 위한 대화를 나눈다",
-            "done_at": ""
-        },
-        {
-            "agent": "content_strategist",
-            "done": true,
-            "description": "기본 목차와 콘텐츠 프레임을 마련한 이후, 세부적인 사례와 실질적 데이터를 문서에 확장시켜 담기 위해 콘텐츠 전략을 재조정하고, 최종 목차를 확일하면서 내용 보강 작업을 준비한다.",
-            "done_at": "2026-06-09 21:29:47"
-        },
-        {
-            "agent": "vector_search_agent",
-            "done": true,
-            "description": "Using the results from the recent a web search, consolidate and integrate the specific case studies and successes of HYBE and JYP. This will help improve the comprehensiveness of the book.",
-            "done_at": "2026-06-09 21:30:36"
-        },
-        {
-            "agent": "communicator",
-            "done": false,
-            "description": "AI팀의 진행상황을 사용자에게 보고하고, 사용자의 의견을 파악하기 위한 대화를 나눈다",
-            "done_at": ""
+            "description": "최근 작성한 목차의 각 섹션에 대한 사례 연구를 더 깊이 있게 작성하기 위해 관련 사례 연구 자료를 벡터 DB에서 검색하여 구체화된 'HYBE와 JYP' 비교 목차를 보강합니다.",
+            "done_at": "2026-06-11 19:51:23"
         }
     ],
     "references": {
         "queries": [
-            "HYBE 경영전략 및 기업 문화",
-            "JYP 경영전략 및 기업 문화",
-            "HYBE management strategy and corporate culture",
-            "JYP management strategy and corporate culture",
-            "HYBE case studies in business strategy",
-            "JYP case studies in business strategy",
-            "K-pop industry future trends 2026",
-            "HYBE success case studies and business strategies",
-            "JYP success case studies and business strategies",
-            "HYBE and JYP success case studies in business strategy",
-            "HYBE and JYP recent case studies in management strategies"
+            "HYBE CEO 2026",
+            "JYP CEO 2026",
+            "HYBE 경영전략",
+            "JYP 경영전략",
+            "HYBE 기업문화",
+            "JYP 기업문화",
+            "HYBE 특징",
+            "JYP 특징",
+            "HYBE 사례 연구",
+            "JYP 사례 연구"
         ],
         "docs": [
             {
-                "source": "https://www.musicbusinessworldwide.com/hybe-the-home-of-bts-restructures-global-business-as-part-of-new-strategy-called-hybe-2-0",
-                "title": "HYBE, the home of BTS, restructures global business as part of new ‘HYBE 2.0’ strategy"
+                "source": "https://www.chosun.com/english/kpop-culture-en/2026/01/02/MW7TG334N5FQDPU7JMCQ6QAH2Y",
+                "title": "HYBE CEO: 2026 Marks HYBE 2.0 Realization Year"
             },
             {
-                "title": "The HYBE Building: Thoughtful design & work culture",
-                "source": "https://borasaekvision.wixsite.com/home/post/the-hybe-building-thoughtful-design-work-culture"
+                "title": "HYBE CEO: 2026 Marks HYBE 2.0 Realization Year",
+                "source": "https://www.chosun.com/english/kpop-culture-en/2026/01/02/MW7TG334N5FQDPU7JMCQ6QAH2Y"
             },
             {
-                "title": "HYBE, the home of BTS, restructures global business as part of new ‘HYBE 2.0’ strategy",
-                "source": "https://www.musicbusinessworldwide.com/hybe-the-home-of-bts-restructures-global-business-as-part-of-new-strategy-called-hybe-2-0"
+                "source": "https://www.musicbusinessworldwide.com/as-k-pop-superstars-bts-return-hybe-ceo-to-test-scarcity-model-for-fandom-business",
+                "title": "As K-pop superstars BTS return, HYBE CEO to test 'scarcity' model ..."
             },
             {
-                "title": "The business of HYBE - by batjacky",
-                "source": "https://batjacky.substack.com/p/the-business-of-hybe"
+                "source": "https://www.musicbusinessworldwide.com/as-k-pop-superstars-bts-return-hybe-ceo-to-test-scarcity-model-for-fandom-business",
+                "title": "As K-pop superstars BTS return, HYBE CEO to test 'scarcity' model ..."
             },
             {
-                "title": "What is Growth Strategy and Future Prospects of Hybe Company?",
-                "source": "https://matrixbcg.com/blogs/growth-strategy/hybecorp"
+                "title": "Hybe leaders named to Billboard's 2026 Power 100 list",
+                "source": "https://www.koreaherald.com/article/10665750"
             },
             {
-                "source": "https://d1al7qj7ydfbpt.cloudfront.net/esg/report/2021/(ENG)+2021+JYP+Entertainment+Sustainability+Report.pdf",
-                "title": "[PDF] Leader of change - Cloudfront.net"
+                "source": "https://jyplevel1storage01.blob.core.windows.net/jypedoc/2024%20JYP%20Entertainment%20Sustainability%20Report(KO).pdf",
+                "title": "2024 JYP ENTERTAINMENT - SUSTAINABILITY REPORT"
             },
             {
-                "title": "[PDF] Leader of change - Cloudfront.net",
-                "source": "https://d1al7qj7ydfbpt.cloudfront.net/esg/report/2021/(ENG)+2021+JYP+Entertainment+Sustainability+Report.pdf"
+                "title": "DATA & MATERIALS - JYP Entertainment",
+                "source": "https://www.jype.com/Board/Detail?jbst_sq=18&gubun=irdata"
             },
             {
-                "title": "Where is JYP Entertainment Located? HQ, Global Offices & Company Insights",
-                "source": "https://www.highperformr.ai/company/jyp-entertainment"
+                "title": "JYP Entertainment - Wikipedia",
+                "source": "https://en.wikipedia.org/wiki/JYP_Entertainment"
             },
             {
-                "title": "[PDF] 2024 jyp entertainment - sustainability report - Microsoft .NET",
-                "source": "https://jyplevel1storage01.blob.core.windows.net/jypedoc/2024%20JYP%20Entertainment%20Sustainability%20Report(ENG).pdf"
+                "source": "https://www.jype.com/Board/Detail?jbst_sq=18&gubun=irdata",
+                "title": "DATA & MATERIALS - JYP Entertainment"
             },
             {
-                "source": "https://jyplevel1storage01.blob.core.windows.net/jypedoc/2024%20JYP%20Entertainment%20Sustainability%20Report(ENG).pdf",
-                "title": "[PDF] 2024 jyp entertainment - sustainability report - Microsoft .NET"
+                "title": "J.Y. Park - Wikipedia",
+                "source": "https://en.wikipedia.org/wiki/J.Y._Park"
             },
             {
-                "title": "the role of exploration, exploitation and dynamic capabilities",
-                "source": "https://reference-global.com/download/article/10.2478/jec-2025-0003.pdf"
+                "source": "https://www.wanted.co.kr/wd/36721",
+                "title": "[하이브(HYBE)] 경영전략 채용 공고 | 원티드"
             },
             {
-                "source": "https://reference-global.com/download/article/10.2478/jec-2025-0003.pdf",
-                "title": "the role of exploration, exploitation and dynamic capabilities"
+                "title": "[하이브(HYBE)] 경영전략 채용 공고 | 원티드",
+                "source": "https://www.wanted.co.kr/wd/36721"
             },
             {
-                "source": "https://rsisinternational.org/journals/ijriss/view/overcoming-the-liabilities-of-foreignness-and-outsidership-in-cultural-markets-a-case-study-of-hybe-s-expansion-into-the-u-s",
-                "title": "Overcoming the Liabilities of Foreignness and Outsidership in Cultural Markets: A Case Study of HYBE’s Expansion into the U.S. | IJRISS"
+                "source": "https://www.chosun.com/english/kpop-culture-en/2026/01/02/MW7TG334N5FQDPU7JMCQ6QAH2Y",
+                "title": "HYBE CEO: 2026 Marks HYBE 2.0 Realization Year"
             },
             {
-                "source": "https://rsisinternational.org/journals/ijriss/view/overcoming-the-liabilities-of-foreignness-and-outsidership-in-cultural-markets-a-case-study-of-hybe-s-expansion-into-the-u-s",
-                "title": "Overcoming the Liabilities of Foreignness and Outsidership in Cultural Markets: A Case Study of HYBE’s Expansion into the U.S. | IJRISS"
+                "title": "(주)하이브 채용 | [HYBE] 전략/사업 관리 경력직 공고 - 리멤버",
+                "source": "https://career.rememberapp.co.kr/job/posting/300223"
             },
             {
-                "source": "https://reference-global.com/download/article/10.2478/jec-2025-0003.pdf",
-                "title": "the role of exploration, exploitation and dynamic capabilities"
+                "title": "HYBE - 나무위키",
+                "source": "https://namu.wiki/w/HYBE"
             },
             {
-                "title": "the role of exploration, exploitation and dynamic capabilities",
-                "source": "https://reference-global.com/download/article/10.2478/jec-2025-0003.pdf"
+                "title": "JYP엔터테인먼트 7가지 차별화 전략과 2025 투자포인트: 글로벌 K-POP 리더의 성장 공식",
+                "source": "https://contents.premium.naver.com/a18382/prism/contents/250506084837340jb"
             },
             {
-                "source": "https://www.highperformr.ai/company/jyp-entertainment",
-                "title": "Where is JYP Entertainment Located? HQ, Global Offices & Company Insights"
+                "title": "JYP엔터테인먼트 7가지 차별화 전략과 2025 투자포인트: 글로벌 K-POP 리더의 성장 공식",
+                "source": "https://contents.premium.naver.com/a18382/prism/contents/250506084837340jb"
             },
             {
-                "source": "https://reference-global.com/download/article/10.2478/jec-2025-0003.pdf",
-                "title": "the role of exploration, exploitation and dynamic capabilities"
+                "source": "https://jyplevel1storage01.blob.core.windows.net/jypedoc/2024%20JYP%20Entertainment%20Sustainability%20Report(KO).pdf",
+                "title": "2024 JYP ENTERTAINMENT - SUSTAINABILITY REPORT"
             },
             {
-                "source": "https://jyplevel1storage01.blob.core.windows.net/jypedoc/2024%20JYP%20Entertainment%20Sustainability%20Report(ENG).pdf",
-                "title": "[PDF] 2024 jyp entertainment - sustainability report - Microsoft .NET"
+                "source": "https://namu.wiki/w/JYP%EC%97%94%ED%84%B0%ED%85%8C%EC%9D%B8%EB%A8%BC%ED%8A%B8",
+                "title": "JYP엔터테인먼트 - 나무위키"
             },
             {
-                "source": "https://medium.com/@KellyKyuu/whats-happening-in-k-pop-right-now-a-shift-you-can-t-ignore-2026-e7ddc96e4d43",
-                "title": "What’s Happening in K-pop Right Now? A Shift You Can’t Ignore 2026"
+                "source": "https://careers.hybecorp.com/ko/home",
+                "title": "HYBE Careers 채용"
             },
             {
-                "title": "K-Culture Trends 2026: K-Pop, Music Industry, and AI | Yunhwa E. Koh, PhD posted on the topic | LinkedIn",
-                "source": "https://www.linkedin.com/posts/yunhwakoh_kculturetrends2026-kculture-kpop-activity-7408079867923189761-fykW"
+                "source": "https://namu.wiki/w/HYBE",
+                "title": "HYBE - 나무위키"
             },
             {
-                "source": "https://kpopalypse.com/2025/12/08/results-of-kpopalypses-predictions-for-2025-and-all-new-mega-trufaxual-predictions-for-2026",
-                "title": "Results of Kpopalypse’s predictions for 2025 and all new mega trufaxual predictions for 2026 – KPOPALYPSE"
+                "source": "https://careers.hybecorp.com/ko/home",
+                "title": "HYBE Careers 채용"
             },
             {
-                "source": "https://medium.com/@KellyKyuu/whats-happening-in-k-pop-right-now-a-shift-you-can-t-ignore-2026-e7ddc96e4d43",
-                "title": "What’s Happening in K-pop Right Now? A Shift You Can’t Ignore 2026"
+                "title": "HYBE - 나무위키",
+                "source": "https://namu.wiki/w/HYBE"
             },
             {
-                "source": "https://wifitalents.com/k-pop-entertainment-industry-statistics",
-                "title": "K-Pop Entertainment Industry: 2026 Verified Stats"
+                "source": "https://namu.wiki/w/HYBE",
+                "title": "HYBE - 나무위키"
             },
             {
-                "source": "https://businessmodelcanvastemplate.com/blogs/growth-strategy/hybe-growth-strategy",
-                "title": "What is Growth Strategy and Future Prospects of Hybe Company? – businessmodelcanvastemplate.com"
+                "source": "https://brunch.co.kr/@changeway/4",
+                "title": "JYP에게 배우는 리더십과 조직문화"
             },
             {
-                "source": "https://yabingkorilyu.squarespace.com/blog-1/Blog%20Post%20Title%20One-8dd88",
-                "title": "HYBE Entertainment Case Study — Yabing (Kori) Lyu"
+                "title": "JYP에게 배우는 리더십과 조직문화",
+                "source": "https://brunch.co.kr/@changeway/4"
             },
             {
-                "source": "https://matrixbcg.com/blogs/how-it-works/hybecorp",
-                "title": "How Does Hybe Company Work? – MatrixBCG.com"
+                "source": "https://brunch.co.kr/@changeway/4",
+                "title": "JYP에게 배우는 리더십과 조직문화"
             },
             {
-                "title": "How Does Hybe Company Work? – MatrixBCG.com",
-                "source": "https://matrixbcg.com/blogs/how-it-works/hybecorp"
+                "title": "JYP에게 배우는 리더십과 조직문화",
+                "source": "https://brunch.co.kr/@changeway/4"
             },
             {
-                "title": "What is Growth Strategy and Future Prospects of Hybe Company? – businessmodelcanvastemplate.com",
-                "source": "https://businessmodelcanvastemplate.com/blogs/growth-strategy/hybe-growth-strategy"
+                "source": "https://www.jype.com/Sustainability/Governance",
+                "title": "JYP Entertainment"
             },
             {
-                "title": "JYP Entertainment: A Success Story | PDF | Pop Music | Popular Music",
-                "source": "https://www.scribd.com/document/647037917/CASE-STUDY-BH-1"
+                "title": "HYBE - 나무위키",
+                "source": "https://namu.wiki/w/HYBE"
             },
             {
-                "title": "JYP Entertainment's Approach To K-Pop In 2018 Brought Company To New Heights",
-                "source": "https://www.forbes.com/sites/tamarherman/2018/12/31/jyp-entertainments-approach-to-k-pop-in-2018-brought-company-to-new-heights"
+                "title": "JYP엔터테인먼트 - 나무위키",
+                "source": "https://namu.wiki/w/JYP%EC%97%94%ED%84%B0%ED%85%8C%EC%9D%B8%EB%A8%BC%ED%8A%B8"
             },
             {
-                "source": "https://jyplevel1storage01.blob.core.windows.net/jypedoc/JYP_Entertainment_Sustainability_Report_2022_(ENG).pdf",
-                "title": "JYP Entertainment Sustainability Report 2022"
+                "title": "JYP엔터테인먼트/특징 (r1 판) - 나무위키",
+                "source": "https://namu.wiki/w/JYP%EC%97%94%ED%84%B0%ED%85%8C%EC%9D%B8%EB%A8%BC%ED%8A%B8/%ED%8A%B9%EC%A7%95?uuid=2a99e824-6e3d-4847-a850-ae247034150e"
             },
             {
-                "title": "the role of exploration, exploitation and dynamic capabilities",
-                "source": "https://reference-global.com/download/article/10.2478/jec-2025-0003.pdf"
+                "title": "JYP엔터테인먼트/특징 - 나무위키",
+                "source": "https://namu.wiki/w/JYP%EC%97%94%ED%84%B0%ED%85%8C%EC%9D%B8%EB%A8%BC%ED%8A%B8/%ED%8A%B9%EC%A7%95"
             },
             {
-                "source": "https://reference-global.com/download/article/10.2478/jec-2025-0003.pdf",
-                "title": "the role of exploration, exploitation and dynamic capabilities"
+                "source": "https://namu.wiki/w/JYP%EC%97%94%ED%84%B0%ED%85%8C%EC%9D%B8%EB%A8%BC%ED%8A%B8/%ED%8A%B9%EC%A7%95?uuid=2a99e824-6e3d-4847-a850-ae247034150e",
+                "title": "JYP엔터테인먼트/특징 (r1 판) - 나무위키"
             },
             {
-                "title": "the role of exploration, exploitation and dynamic capabilities",
-                "source": "https://reference-global.com/download/article/10.2478/jec-2025-0003.pdf"
+                "source": "https://namu.wiki/w/JYP%EC%97%94%ED%84%B0%ED%85%8C%EC%9D%B8%EB%A8%BC%ED%8A%B8/%ED%8A%B9%EC%A7%95?uuid=2a99e824-6e3d-4847-a850-ae247034150e",
+                "title": "JYP엔터테인먼트/특징 (r1 판) - 나무위키"
+            },
+            {
+                "title": ":: JYP엔터테인먼트의 ESG 경영 전략 분석 - K-Pop 기업의 사회적 책임과 지속가능성 사례 연구 -",
+                "source": "https://scholarx.skku.edu/item/b60990d1-8968-4df8-ba4f-8526976d11e0"
+            },
+            {
+                "source": "https://www.kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART003204900",
+                "title": "JYP엔터테인먼트의 ESG 경영 전략 분석 - K-Pop 기업의 사회적 책임과 지속가능성 사례 연구 -"
+            },
+            {
+                "source": "https://www.kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART003204900",
+                "title": "JYP엔터테인먼트의 ESG 경영 전략 분석 - K-Pop 기업의 사회적 책임과 지속가능성 사례 연구 -"
+            },
+            {
+                "title": "JYP엔터테인먼트의 ESG 경영 전략 분석 - K-Pop 기업의 사회적 책임과 지속가능성 사례 연구 -",
+                "source": "https://www.kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART003204900"
             }
         ]
     }
