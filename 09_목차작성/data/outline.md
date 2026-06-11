@@ -1,183 +1,119 @@
-# 기획의도 및 제시하고자 하는 메시지  
-## 책의 기획 의도와 독자들에게 전달하고자 하는 메시지를 더욱 구체적으로 서술합니다.  
-  1. HYBE와 JYP의 경영전략과 기업 문화를 포괄적으로 분석하여 독자들에게 두 기업의 핵심 성공 요인을 비교할 수 있는 통찰력을 제공한다.
-  2. 두 회사의 문화적 차이를 심도 있게 탐구하여 K-pop 산업 내에서의 차별성을 이해한다.
-  3. 최근 K-pop 산업의 트렌드와 전망을 통해 독자들에게 미래 산업 흐름을 예측할 수 있는 정보를 제공한다.
+# 보고서 제목: HYBE와 JYP의 비교
 
-## 지난 목차(previous_outline)에 비해 이번 목차 작성시 달성하려는 목표
-  1. 사용자의 요구사항인 HYBE와 JYP의 철저한 비교를 더욱 명확하게 드러낸다.
-  2. 경영전략 및 기업 문화의 세부적인 사례와 데이터 기반 분석을 강화한다.
-  3. K-pop 산업의 미래 전망을 명확히 제시하고 기업들 간의 경쟁력을 더욱 심도 있게 비교 분석한다.
+## 보고서 부제목: 두 거대 엔터테인먼트 기업의 CEO, 전략, 문화, 그리고 특성의 심층 비교
 
----------------------------------------------------------------------------------
----
-# 책의 제목: K-pop Giants: A Comparative Exploration of HYBE and JYP
-## 부제목: 두 개의 왕좌, 두 개의 비즈니스 전략
+# Chapter 제목 및 내용 간략 소개
+
+## Chapter 1: HYBE와 JYP의 CEO
+- 이 장에서는 HYBE와 JYP의 CEO들의 배경, 리더십 스타일, 그리고 기업 내에서의 영향력을 비교 분석합니다.
+
+## Chapter 2: 경영 전략 비교
+- 두 기업의 경영 전략과 중장기 계획을 탐구하며, 각각의 이니셔티브와 핵심 전략을 비교합니다.
+
+## Chapter 3: 기업 문화 및 조직 구조
+- HYBE와 JYP의 기업 문화, 조직 구조, 그리고 이들이 기업 성과 및 혁신에 미치는 영향을 분석합니다.
+
+## Chapter 4: 기업의 특성
+- 각 기업의 특징적인 요소를 분석하고, 차별화된 전략이나 접근법을 소개합니다.
 
 # 세부 목차
----------------------------------------------------------------------------------
 
 :---OUTLINE STARTS HERE:---:
 
-## Chapter 1: 서론  
-- **Chapter 목적:** HYBE와 JYP의 역사적 배경과 현재의 중요성을 설명하며, 이 책이 다룰 주요 주제를 소개한다.  
-- **Chapter 내용:**  
-  - K-pop 산업의 역사와 성장  
-  - HYBE 및 JYP의 배경, 글로벌 영향력  
-  - 연구 목적 및 방법론  
+## Chapter 1: HYBE와 JYP의 CEO
+- **Chapter 목적:** HYBE와 JYP의 CEO들을 심층적으로 분석하여 그들의 배경이 기업에 미치는 영향을 이해합니다.  
+- **Chapter 내용:** CEO의 경력, 리더십 스타일, 비전 등을 비교 분석합니다.
 
-### Section 1.1: K-pop산업과 두 기업의 위치  
-- **Section 목적:** K-pop의 성장 배경과 두 기업의 시장 내 위치를 설명한다.  
-- **Section 내용:**  
-  - K-pop의 성장은 어떻게 이루어졌는가?  
-  - HYBE와 JYP의 설립과 주요 이정표  
-  - 글로벌 시장에서의 두 업체의 영향력  
+### Section 1.1: HYBE의 CEO
+- **Section 목적:** HYBE의 CEO 리더십 스타일과 경력 배경을 분석합니다.  
+- **Section 내용:** CEO의 경영 철학, 리더십 변화, 주요 성과 분석.  
 - **주요 내용:**  
-  - K-pop의 역사적 발자취  
-  - 두 기업의 설립 배경  
-  - 글로벌 전략과 성과  
+  - Lee Jae-sang의 경력과 리더십 이력.  
+  - HYBE의 CEO로서의 전략적 역할과 주요 결정을 분석.  
+  - [HYBE CEO: 2026](https://www.chosun.com/english/kpop-culture-en/2026/01/02/MW7TG334N5FQDPU7JMCQ6QAH2Y): 2026년을 HYBE 2.0 실현의 해로 규정.  
 - **참고문헌:**  
-  1. [K-pop Global Impact](https://example.com): K-pop의 세계적 성공과 배경  
-  2. [HYBE Company History](https://example.com): HYBE의 설립과 주요 변천사  
-  3. [JYP Global Strategy](https://example.com): JYP의 글로벌 전략 
+  1. [HYBE CEO 연설](https://www.chosun.com): CEO의 비전과 중장기 전략.  
+  2. [HYBE 투자 전략](https://www.musicbusinessworldwide.com): 2026년 HYBE의 투자가 수익으로 전환될 계획.  
 
-### Section 1.2: 연구 접근 방법  
-- **Section 목적:** 연구의 방법론적 접근을 설명하고, 분석 및 비교 전략을 제시한다.  
-- **Section 내용:**  
-  - 데이터 수집 및 분석 방법  
-  - 비교 분석의 프레임  
+### Section 1.2: JYP의 CEO
+- **Section 목적:** JYP의 CEO의 경력 배경과 리더십 스타일을 분석합니다.
+- **Section 내용:** 경영 철학과 기업 문화 조성능력을 중심으로 분석합니다.
 - **주요 내용:**  
-  - 연구 방법론  
-  - 분석 프레임워크  
+  - 박진영의 리더십 및 그의 특유의 시스템적 리더십 접근.  
+  - CEO의 창의적 의사결정 능력과 재무 건전성을 탐구.  
 - **참고문헌:**  
-  1. [Business Research Methods](https://example.com): 경영 전략 연구 방법  
-  2. [Comparative Analysis in Business](https://example.com): 비교 분석을 위한 접근 방식  
+  1. [JYP CEO의 경영 보고서](https://jyplevel1storage01.blob.core.windows.net): 지속 가능한 엔터테인먼트 전략.  
 
 :---CHAPTER DIVIDER---:
 
-## Chapter 2: HYBE의 경영전략 및 기업 문화
-- **Chapter 목적:** HYBE의 경영전략과 독창적인 문화의 특성을 파악한다.  
-- **Chapter 내용:** HYBE의 다각적인 전략 요소와 혁신적인 문화 활동.
+## Chapter 2: 경영 전략 비교
+- **Chapter 목적:** HYBE와 JYP의 주요 경영 전략을 비교하며, 각 전략의 성공 요인을 파악합니다.  
+- **Chapter 내용:** 전략적 목표, 혁신 이니셔티브, 시장 접근 방식, 그리고 주요 사업 부문에 대해 비교합니다.
 
-### Section 2.1: HYBE의 경영 전략에 대한 개요  
-- **Section 목적:** HYBE의 주요 경영 전략을 설명한다.  
-- **Section 내용:**  
-  - 경영 비전과 목표  
-  - 시장 포지셔닝 전략  
-  - 국제화 및 다각화 전략  
+### Section 2.1: HYBE 경영 전략
+- **Section 목적:** HYBE의 글로벌 전략 및 시장 확장 계획을 분석합니다.
+- **Section 내용:** 글로벌 거버넌스 시스템 구축, 음악 플랫폼 사업 확대 전략 등.
 - **주요 내용:**  
-  - 경영 목표 설정  
-  - 글로벌 시장 접근법  
+  - HYBE 2.0 전략의 주요 축.  
+  - 리더십 역할과 글로벌 팬덤 비즈니스의 확장성.  
 - **참고문헌:**  
-  1. [HYBE Market Analysis](https://example.com): HYBE의 시장 분석  
-  2. [Diversification Strategies by HYBE](https://example.com): HYBE의 다각화 전략  
+  1. [하이브 글로벌 전략](https://careers.hybecorp.com): 통합적 거버넌스 시스템.  
 
-### Section 2.2: HYBE의 기업 문화와 혁신  
-- **Section 목적:** HYBE의 문화적 가치와 내부 혁신 사례를 보여준다.  
-- **Section 내용:**  
-  - 사내 문화 및 가치  
-  - 혁신 사례 및 관행  
+### Section 2.2: JYP 경영 전략
+- **Section 목적:** JYP의 포트폴리오와 전략적 목표에 대해 설명합니다.
+- **Section 내용:** 시장 성장, IP 확장, 인재 육성에 대한 전략 분석.
 - **주요 내용:**  
-  - 문화적 혁신  
-  - 조직 구조의 변화  
+  - JYP의 팬덤 기반 글로벌 확장 전략.  
+  - 창의적 인재 발굴 및 지속적인 경영 혁신.  
 - **참고문헌:**  
-  1. [HYBE Corporate Culture](https://example.com): HYBE의 기업 문화  
-  2. [Innovation at HYBE](https://example.com): HYBE의 혁신 사례  
+  1. [JYP 차별화 전략](https://contents.premium.naver.com): MD사업 및 IP기반 신사업 개발.  
 
 :---CHAPTER DIVIDER---:
 
-## Chapter 3: JYP의 경영전략 및 기업 문화
-- **Chapter 목적:** JYP의 경영 전략과 문화적 접근 방식을 심층 분석한다.  
-- **Chapter 내용:** JYP의 특유 경영 철학 및 문화 활동을 조명한다.  
+## Chapter 3: 기업 문화 및 조직 구조
 
-### Section 3.1: JYP의 경영 전략적 접근  
-- **Section 목적:** JYP 경영 철학과 전략을 소개한다.  
-- **Section 내용:**  
-  - 비전과 미션  
-  - 고객 중심의 전략  
+### Section 3.1: HYBE의 문화와 구조
+- **Section 목적:** HYBE의 기업 문화와 구조의 특징을 파악합니다.  
+- **Section 내용:** 자율적인 조직 문화, 팬 경험 중심의 접근 방식.
 - **주요 내용:**  
-  - 경영 철학  
-  - 고객 지향 전략  
+  - 글로벌 팬덤과 콘텐츠 생산.  
+  - 기업 내 자율성과 협력적 피드백 시스템.  
 - **참고문헌:**  
-  1. [Vision & Mission of JYP](https://example.com): JYP의 비전 및 미션  
-  2. [Customer-centric Strategies by JYP](https://example.com): JYP의 고객 중심 전략  
+  1. [HYBE 조직 문화](https://namu.wiki): 중간관리층과의 역동적 상호작용.  
 
-### Section 3.2: JYP의 기업 문화 및 사회적 책임  
-- **Section 목적:** JYP의 기업 문화와 사회적 책임 활동을 파악한다.  
-- **Section 내용:**  
-  - 윤리와 정체성  
-  - 사회적 기여 및 책임  
+### Section 3.2: JYP의 문화와 구조
+- **Section 목적:** JYP의 기업 가치와 문화적 접근을 분석합니다.  
+- **Section 내용:** 윤리 경영, 공정성과 투명성을 중시하는 문화.
 - **주요 내용:**  
-  - 윤리적 경영  
-  - 사회적 가치 창출  
+  - J-WAY 문화 설계 및 실천 사례.  
+  - 조직 내 윤리 경영 체계와 고객중심 사업 개발.  
 - **참고문헌:**  
-  1. [JYP Corporate Responsibility](https://example.com): JYP의 사회적 책임  
-  2. [Ethics and Identity at JYP](https://example.com): JYP 내부의 윤리 및 정체성
+  1. [JYP 조직 문화](https://brunch.co.kr): 진실, 성실, 겸손을 강조하는 문화적 가치.  
 
 :---CHAPTER DIVIDER---:
 
-## Chapter 4: HYBE와 JYP의 비교와 분석
-- **Chapter 목적:** 두 기업의 경영 전략과 문화적 차이를 비교하고 분석한다.  
-- **Chapter 내용:** 경쟁력 및 다양한 차이점 분석.  
+## Chapter 4: 기업의 특성
 
-### Section 4.1: 경영 전략 비교  
-- **Section 목적:** HYBE와 JYP의 전략을 비교한다.  
-- **Section 내용:**  
-  - 전략적 성공 요소 비교  
-  - 파트너십 및 혁신 전략  
-  - 글로벌 시장 접근방법의 차이  
+### Section 4.1: HYBE의 특성
+- **Section 목적:** HYBE의 독특한 기업 특성을 살펴봅니다.  
+- **Section 내용:** 리브랜딩 비전, 글로벌 확장 중심의 사업 모델.
 - **주요 내용:**  
-  - 성공 요소 및 전략 분석  
-  - 국제화 전략의 차별성  
+  - 음악과 기술 융합, 팬 중심의 비즈니스 모델.  
+  - 'We believe in music'라는 기업 비전 실현.  
 - **참고문헌:**  
-  1. [Comparison of K-pop Company Strategies](https://example.com): K-pop 기업 전략 비교  
-  2. [Global Approaches in K-pop](https://example.com): K-pop의 글로벌 전략  
+  1. [HYBE 사업모델](https://namu.wiki/w/HYBE): 글로벌 트렌드를 따르는 현업 혁신.  
 
-### Section 4.2: 기업 문화 비교  
-- **Section 목적:** 두 기업의 문화적 접근을 비교하여 분석한다.  
-- **Section 내용:**  
-  - 가치관 및 업무 방식 비교  
-  - 인재 관리 및 육성 차이  
+### Section 4.2: JYP의 특성
+- **Section 목적:** JYP의 차별화된 특성을 분석합니다.  
+- **Section 내용:** 창의성 및 혁신 추구, 시장에의 유연한 대응.  
 - **주요 내용:**  
-  - 문화적 가치 및 실천  
-  - 인재 양성 전략  
+  - 창의적 아티스트 육성 및 다양성 중시 전략.  
+  - 글로벌 K-POP 브랜드로서의 위치 강화.
 - **참고문헌:**  
-  1. [Cultural Differences in K-pop](https://example.com): K-pop 기업의 문화 비교  
-  2. [Talent Management in K-pop](https://example.com): K-pop의 인재 관리  
-
-:---CHAPTER DIVIDER---:
-
-## Chapter 5: 결론 및 전망
-- **Chapter 목적:** 두 회사 및 K-pop 산업의 미래 가능성을 예측하고 결론을 도출한다.  
-- **Chapter 내용:**  
-  - 주요 발견 요약  
-  - K-pop의 미래 전망  
-  - 두 회사의 도전과 기회  
-
-### Section 5.1: 연구 요약 및 주요 발견  
-- **Section 목적:** 주요 발견 사항 요약  
-- **Section 내용:**  
-  - 기업 성공 요소 요약  
-  - 반영된 교훈  
-- **주요 내용:**  
-  - 성공 요인 및 배울 점  
-- **참고문헌:**  
-  1. [Lessons from K-pop](https://example.com): 주요 교훈 및 성공 요소 분석
-
-### Section 5.2: 미래 전망과 기회  
-- **Section 목적:** 두 기업의 미래 및 K-pop 산업 분석  
-- **Section 내용:**  
-  - 시장 트렌드 예측  
-  - 도전과 기회의 평가  
-- **주요 내용:**  
-  - 지속 가능한 성장 기회  
-  - 예상되는 도전과 전략  
-- **참고문헌:**  
-  1. [Future of K-pop Industry](https://example.com): K-pop 산업의 미래 전망
+  1. [JYP 특징](https://namu.wiki): 역량 있는 아티스트 창출과 혁신적 접근법.  
 
 -----: DONE :-----
 
 + 목차 작성 후기
-- 사용자의 요구사항이 적절히 반영되었으며, HYBE와 JYP의 경영전략 및 기업 문화 비교를 통해 다양한 측면에서 깊이 있는 분석을 제시한다.
-- 경영 및 문화적 비교 측면에 대한 적절한 세분화로 내용을 확장할 수 있는 기틀을 마련하였다.
-- 추가 자료 조사가 필요하며, 웹 검색과 데이터 확보를 통해 더욱 풍부한 내용을 구성할 것을 권장한다.
+- 사용자의 요구사항이 적절히 반영되었습니다. 필요한 주요 영역들이 관련 자료를 참고하여 체계적으로 구성되었습니다.
+- 추가로 확장할 수 있는 부분이나 구범을 구체화하기 위한 깊이 있는 사례 연구가 필요한 경우를 파악하고, 구성 개선을 위해 추가 리서치가 필요하다고 판단됩니다.
