@@ -1,0 +1,10 @@
+{
+    "name": "MyServer",
+    "source": {
+        "path": "weather.py",
+        "entrypoint": "mcp"
+    },
+    "environment": {
+        "dependencies": ["requests"]
+    }
+}
