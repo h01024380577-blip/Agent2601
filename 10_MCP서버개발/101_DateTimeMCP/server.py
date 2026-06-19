@@ -20,6 +20,17 @@ def get_current_datetime() -> str:
     now = datetime.now()
     return now.strftime("%Y-%m-%d %H:%M:%S")
 
+@mcp.tool()
+def add(a: int, b:int) -> int: #MCP 도구의 이름(add)과 입력 스키마
+    """Adds two integer numbers together.""" # 도구에 대한 설명
+    return a + b
+
+@mcp.tool()
+def greet_user(name: str, is_morning: bool = False) -> str: # MCP 도구의 이름(greet_user)과 입력 스키마
+    """Greet the user with a personalized message.""" # 도구에 대한 설명
+    greeting = "Good morning" if is_morning else "Hello"
+    return f"{greeting}, {name}!"
+
 
 if __name__ == "__main__":
     mcp.run()
