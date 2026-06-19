@@ -43,3 +43,12 @@ def data_analysis_prompt(
     """이 독스트링은 description이 있을 때 무시됨"""
     return f"Analyze the dataset at {data_uri} using the '{analysis_type}' method."
     
+
+@mcp.tool()
+def hello_world(name: str):
+    """greets the provided name."""    
+    return f"😎Hello {name}"
+
+
+if __name__ == "__main__":
+    mcp.run()
