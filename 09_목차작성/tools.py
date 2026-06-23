@@ -16,7 +16,7 @@ current_path = os.path.dirname(absolute_path) # 현재 .py 파일이 있는 폴�
 
 # RAG를 위한 설정
 from langchain_openai import OpenAIEmbeddings
-from langchain_community.vectorstores.chroma import Chroma
+from langchain_chroma import Chroma
 
 # 오픈AI Embedding 설정
 embedding = OpenAIEmbeddings(model='text-embedding-3-large')
