@@ -1,0 +1,10 @@
+{
+    "name": "Anlytics-MCP Server",
+    "source": {
+        "path": "anlytics-mcp.py",
+        "entrypoint": "mcp"
+    },
+    "environment": {
+        "dependencies": ["pandas"]
+    }
+}
