@@ -1,0 +1,10 @@
+{
+    "name": "DartMCP Server",
+    "source": {
+        "path": "dartmcp.py",
+        "entrypoint": "mcp"
+    },
+    "environment": {
+        "dependencies": ["pandas","requests","OpenDartReader","pydantic"]
+    }
+}

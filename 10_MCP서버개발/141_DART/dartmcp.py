@@ -63,4 +63,99 @@ def get_company_overview(
     """    
     return dart.company(corp_code)
 
-# 🟡 TO Next
+#기업의 주요 계정과목 (재무상태표, 손익계산서)
+@mcp.tool(
+    name="get_financial_statement",
+    description="Fetch the company's main financial statement items (Balance Sheet or Income Statement)."
+)
+def get_financial_statement(
+    corp_code: Annotated[str, Field(description="Corporate code of the company.")],
+    date: Annotated[str, Field(description="Year in 'yyyy' format.")],
+    report_code: Annotated[str, Field(description="Report code: '11012' for Semi-Annual, '11014' for Q3, '11013' for Q1.")],
+    sj_div: Annotated[Literal['BS', 'IS'], Field(description="Statement type: 'BS' for Balance Sheet, 'IS' for Income Statement.")],
+):
+    """
+    MCP tool for fetching financial statement information.
+    Args:
+        corp_code (str): Corporate code of the company.
+        date (str): Year in 'yyyy' format.
+        report_code (str): Report code for the statement period.
+        sj_div (str): Statement type ('BS' or 'IS').
+
+    Returns:
+        DataFrame: Filtered financial statement data.
+    """    
+    df = dart.finstate(corp_code, date, report_code)
+    # 연결재무재표
+    filtered_df = df[(df['fs_div'] == 'CFS') & (df['sj_div'] == sj_div)]
+    if filtered_df.empty:
+        # 혹시 없다면 OFS
+        filtered_df = df[(df['fs_div'] == 'OFS') & (df['sj_div'] == sj_div)]
+
+    filtered_df = filtered_df[['corp_code', 'bsns_year', 'reprt_code', 'account_nm', 'thstrm_amount']]
+    return filtered_df
+
+# 특정 사업보고서 조회
+@mcp.tool(
+    name="get_specific_business_report",
+    description="Fetch a specific type of business report for a company."
+)
+def get_specific_business_report(
+    corp_code: Annotated[str, Field(description="Corporate code of the company.")],
+    report_code: Annotated[str, Field(description=f"Report code. Must be one of: {REPORT_CODES}")],
+    date: Annotated[str, Field(description="Year in 'yyyy' format.")]
+):
+    """
+    MCP tool for fetching a specific type of business report.
+
+    Args:
+        corp_code (str): Corporate code of the company.
+        date (str): Year in 'yyyy' format.
+        report_code (str): Report code (must be one of the predefined values).
+
+    Returns:
+        dict or DataFrame: Business report information, or error message if report_code is invalid or no data found.
+    """    
+    if report_code not in REPORT_CODES:
+        return {"error": f"💥report_code must be on of : {REPORT_CODES}"}
+
+    result = dart.report(corp_code, report_code, date)
+
+    if isinstance(result, pd.DataFrame) and result.empty:
+        return {"message": "No data found for the given parameters."}
+
+    return result
+
+# 주요 사항 보고서.
+@mcp.tool(
+    name="get_major_event_report",
+    description="Fetch a major event report for a company."
+)
+def get_major_event_report(
+    corp_code: Annotated[str, Field(description="Corporate code of the company.")],
+    event: Annotated[str, Field(description=f"Event code. Must be one of: {EVENT_CODES}")],
+    date: Annotated[str, Field(description="Year in 'yyyy' format.")]
+):
+    """
+    MCP tool for fetching a major event report.
+
+    Args:
+        corp_code (str): Corporate code of the company.
+        event (str): Event code (must be one of the predefined values).
+        date (str): Year in 'yyyy' format.
+
+    Returns:
+        dict or DataFrame: Major event report information, or error message if event is invalid or no data found.
+    """    
+    if event not in EVENT_CODES:
+        return {"error": f"event must be one of: {EVENT_CODES}"}
+
+    result = dart.event(corp_code, event, date)
+
+    if isinstance(result, pd.DataFrame) and result.empty:
+        return {'message': "No data found for the given parameters."}
+
+    return result
+
+if __name__ == '__main__':
+    mcp.run()
