@@ -1,0 +1,24 @@
+/* 
+  CSS: Cascading Style Sheet
+  HTML 문서 의 스타일
+*/
+
+/* CSS 기본구문 
+   selector { property : value; property : value; ...}  */
+
+h1 {color: red; background-color: yellow;}
+
+#chat-box {  /* id="chat-box" 인 element 선택 */
+    border: 1px solid #ccc
+}
+
+.user-message { /* class="user-message" 인 element 선택 */
+    background: #007bff; 
+    color: white; 
+    margin-left: auto; 
+    text-align: right;
+}
+
+.bot-message {
+    background: #f1f1f1;
+}
