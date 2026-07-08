@@ -116,19 +116,55 @@ const ChatApp = {
       // throw new Error("!!에러 테스트 발생!!");
 
       // fetch() 로 백엔드 /chat  엔드포인트에 POST 요청
+      const response = await fetch("/chat", {
+        method: "POST",
+        headers: {"Content-Type": "application/x-www-form-urlencoded" },
 
+        body: new URLSearchParams(
+          {
+            message: message, 
+            session_id: this.sessionId,
+          }
+        ),
+      });
 
-      // 응답의 HTTP 상태코드가 200 이 아니면 에러처리
-
+      // 응답의 HTTP 상태코드가 200 이 아니면 에러처리  (response.ok === false)
+      if(!response.ok){
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
 
       // 응답(response)로 부터 스트림을 읽을수 있는 reader 객체 얻기
-
+      const reader = response.body.getReader();  // 서버는 SSE 스트리밍으로 응답중.
 
       // 문자열 디코딩 준비
+      // 서버에서 오는 데이터는 바이트(Uint8Array)이므로, 이를 문자열로 디코딩할 TextDecoder를 준비합니다.      
+      const decoder = new TextDecoder();
+
+      // 지금까지 수신하여 누적된 전체 텍스트(마크다운 원문)를 저장할 변수입니다.
+      let content = "";
 
 
       // 스트림을 순차적으로 읽어서 화면에 점진적으로 표시
+      // 무한 루프를 돌며 reader.read()로 청크를 하나씩 꺼내고,
+      // 서버가 스트림을 종료하면(done === true) 반복을 빠져나갑니다.            
+      while(true){
+        // value: 이번에 수신한 청크(Uint8Array), done: 스트림 종료 여부
+        const { value, done } = await reader.read();
+        if(done) break;
 
+        // 이번 청크를 문자열로 디코딩하여 누적 콘텐츠에 이어 붙입니다.
+        // { stream: true } 옵션은 멀티바이트 문자(예: 한글)가 청크 경계에서
+        // 잘리는 경우에도 다음 청크와 합쳐 올바르게 디코딩되도록 해 줍니다.
+        content += decoder.decode(value, {stream: true});
+
+        // 누적된 전체 마크다운 텍스트를 매 청크마다 다시 HTML로 파싱하여
+        // 봇 메시지 요소에 통째로 반영합니다. (부분 마크다운도 자연스럽게 갱신됨)
+        botMessageElement.innerHTML = marked.parse(content);
+
+
+        this.scrollToBottom();
+
+      } // end while
 
       
     } catch(error) {
